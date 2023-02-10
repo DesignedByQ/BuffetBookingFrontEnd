@@ -1,0 +1,66 @@
+<p>add-student works!</p>
+
+<form [formGroup]="addBooking" (ngSubmit)="bookBuffet()">
+
+
+    
+    
+    <div class="form-group">
+
+        <label for="Booking">Booking Category</label>
+        <br>
+        <input type="text" name="Booking" id="buffetName" formControlName="buffetName" class="form-control"/>
+
+    </div>
+   
+    <span id="buffetNameError">{{Error}}</span>
+    <br>
+    <br>
+    <div class="form-group">
+
+        <label for="Email">Email Id</label>
+        <br>
+
+        <input type="email" name="Email" id="emailId" formControlName="emailId" class="form-control"/>
+
+    </div>
+
+    <span id="emailIdError"></span>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+
+        <label for="PlateCount">Plate Count</label>
+        <br>
+
+        <input type="number" name="PlateCount" id="plateCount" formControlName="plateCount" class="form-control"/>
+
+    </div>
+
+    <span id="plateCountError"></span>
+
+    <br>
+    <br>
+
+    <div class="form-group">
+
+        <label for="Date">Booking Date</label>
+        <br>
+
+        <input type="date" name="Date" id="bookedOn" formControlName="bookedOn" class="form-control"/>
+
+    </div>
+
+    <span id="bookedOnError"></span>
+
+
+
+    <br>
+    <br>
+    <button type="submit" [disabled]="addBooking.invalid">Submit</button>
+    <span></span>
+
+</form>
+
