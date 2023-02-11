@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BuffetBooking } from './buffet-booking';
 import { Observable } from 'rxjs';
 
@@ -16,8 +16,12 @@ export class BuffetBookingService {
     return this.http.post<BuffetBooking>(`${this.url}`, data);
   }
 
-    //bookBuffet(data: BuffetBooking): Observable<BuffetBooking>{
+  //alternative service method for posting with headers
+  /*bookBuffet(data: {buffetName: String, emailId: String, plateCount: Number, bookedOn: Date}): Observable<BuffetBooking>{
 
-    //return this.http.post<BuffetBooking>(`${this.url}`, data);}
+    const headerings = new HttpHeaders({'myheader': 'mockprj'});
+
+    return this.http.post<BuffetBooking>(`${this.url}`, data, {headers: headerings});
+  }*/
 
 }

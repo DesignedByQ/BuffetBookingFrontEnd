@@ -13,7 +13,8 @@
 
     </div>
    
-    <span id="buffetNameError">{{Error}}</span>
+    <span id="buffetNameError" >{{Error}}</span>
+    <!--*ngIf="buffetName.invalid&&buffetName.touched"-->
     <br>
     <br>
     <div class="form-group">
@@ -25,7 +26,7 @@
 
     </div>
 
-    <span id="emailIdError"></span>
+    <span id="emailIdError">{{Error}}</span>
 
     <br>
     <br>
@@ -39,7 +40,7 @@
 
     </div>
 
-    <span id="plateCountError"></span>
+    <span id="plateCountError">{{Error}}</span>
 
     <br>
     <br>
@@ -53,14 +54,16 @@
 
     </div>
 
-    <span id="bookedOnError"></span>
+    <span id="bookedOnError">{{Error}}</span>
 
 
 
     <br>
     <br>
     <button type="submit" [disabled]="addBooking.invalid">Submit</button>
-    <span></span>
+    <br>
+
+    <span>{{Successful}}{{ErrorMsg}}</span>
 
 </form>
 
