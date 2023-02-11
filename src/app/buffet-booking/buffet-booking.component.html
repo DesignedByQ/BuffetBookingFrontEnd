@@ -2,19 +2,16 @@
 
 <form [formGroup]="addBooking" (ngSubmit)="bookBuffet()">
 
-
-    
-    
     <div class="form-group">
 
         <label for="Booking">Booking Category</label>
         <br>
         <input type="text" name="Booking" id="buffetName" formControlName="buffetName" class="form-control"/>
-
+        
     </div>
    
-    <span id="buffetNameError" >{{Error}}</span>
-    <!--*ngIf="buffetName.invalid&&buffetName.touched"-->
+    <span id="buffetNameError">{{Error1}}</span>
+    <!--*ngIf="buffetName && buffetName.invalid && buffetName.touched" [(ngModel)]="my"  #buffetName="ngModel"-->
     <br>
     <br>
     <div class="form-group">
@@ -26,7 +23,7 @@
 
     </div>
 
-    <span id="emailIdError">{{Error}}</span>
+    <span id="emailIdError">{{Error2}}</span>
 
     <br>
     <br>
@@ -40,7 +37,7 @@
 
     </div>
 
-    <span id="plateCountError">{{Error}}</span>
+    <span id="plateCountError">{{Error3}}</span>
 
     <br>
     <br>
@@ -54,7 +51,7 @@
 
     </div>
 
-    <span id="bookedOnError">{{Error}}</span>
+    <span id="bookedOnError">{{Error4}}</span>
 
 
 
@@ -65,5 +62,8 @@
 
     <span>{{Successful}}{{ErrorMsg}}</span>
 
+    <br>
+    <button type="submit" (click)="getBookings()">Get Bookings</button>
+    <br>
 </form>
 

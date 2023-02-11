@@ -14,11 +14,19 @@ import { HttpErrorResponse, HttpResponse, HttpStatusCode } from '@angular/common
 export class AddBookingComponent implements OnInit {
   
   Successful: String;
-  Error: String;
-  //fb: FormBuilder;
+  Error1: String;
+  Error2: String;
+  Error3: String;
+  Error4: String;
+  
   ErrorMsg: String;
+  
+  public employees: BuffetBooking[] | null = null;
+ 
 
   constructor(private bbs: BuffetBookingService) {}
+
+ 
 
   addBooking=new FormGroup ({
     
@@ -31,9 +39,14 @@ export class AddBookingComponent implements OnInit {
 
   
   
-  ngOnInit(): void {
+  ngOnInit() {
    // throw new Error('Method not implemented.');
-
+   /*this.addBooking = this.fb.group({
+    buffetName: ['', Validators.required],
+    emailId: ['', [Validators.required, Validators.email]],
+    plateCount: ['', [Validators.required, Validators.min(1)]],
+    bookedOn: ['', Validators.required]
+   });*/
   }
 
   bookBuffet(){
@@ -54,6 +67,15 @@ export class AddBookingComponent implements OnInit {
       }
       
     );
+  }
+
+  getBookings(){
+
+    this.bbs.getBookings().subscribe(
+      (Response: BuffetBooking[]) => {
+        console.log(Response);
+      }
+    )
   }
   
 

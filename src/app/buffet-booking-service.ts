@@ -7,13 +7,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BuffetBookingService {
-  url='http://localhost:1111/api/booking';
+  url='http://localhost:1111/api';
   
   constructor( private http: HttpClient ) { }
 
   bookBuffet(data: any): Observable<BuffetBooking>{
     //console.log(data);
-    return this.http.post<BuffetBooking>(`${this.url}`, data);
+    return this.http.post<BuffetBooking>(`${this.url}/booking`, data);
   }
 
   //alternative service method for posting with headers
@@ -23,5 +23,11 @@ export class BuffetBookingService {
 
     return this.http.post<BuffetBooking>(`${this.url}`, data, {headers: headerings});
   }*/
+
+  getBookings(): Observable<BuffetBooking[]>{
+
+    return this.http.get<BuffetBooking[]>(`${this.url}/allbookings`);
+    
+  }
 
 }
